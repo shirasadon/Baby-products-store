@@ -1,7 +1,5 @@
 function AddProduct() {
-    return ( <>
-    "jhnh"
-    </> );
+  return <>"jhnh"</>;
 }
 
 export default AddProduct;

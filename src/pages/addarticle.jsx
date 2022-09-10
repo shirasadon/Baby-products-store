@@ -1,7 +1,5 @@
 function AddArticle() {
-    return ( <>
-    "jhnkjhl"
-    </> );
+  return <>"jhnkjhl"</>;
 }
 
 export default AddArticle;

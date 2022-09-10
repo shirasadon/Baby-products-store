@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import NavbarHeader from "./components/navbar";
 import Home from "./pages/home";
@@ -27,7 +27,7 @@ function App() {
         <Route path="/signupbiz" element={<SignupBiz />} />
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/addarticle" element={<AddArticle />} />
-        </Routes>
+      </Routes>
     </div>
   );
 }

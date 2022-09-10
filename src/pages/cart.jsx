@@ -1,7 +1,5 @@
 function Cart() {
-    return ( <>
-    "gybdscyngydc"
-    </> );
+  return <>"gybdscyngydc"</>;
 }
 
 export default Cart;

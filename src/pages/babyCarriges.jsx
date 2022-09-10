@@ -1,7 +1,5 @@
 function Babycarriges() {
-    return ( <>
-    "hagnd yagso u"
-    </> );
+  return <>"hagnd yagso u"</>;
 }
 
 export default Babycarriges;

@@ -42,32 +42,32 @@ function NavbarHeader() {
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/login">
-              login
+                login
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/signup">
-              sign up
+                sign up
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/signupbiz">
-              business
+                business
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/logout">
-            log out
+                log out
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/addproduct">
-           add product
+                add product
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/addarticle">
-            add article
+                add article
               </Link>
             </li>
           </ul>

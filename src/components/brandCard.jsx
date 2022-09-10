@@ -1,7 +1,5 @@
 function BrandCard() {
-    return ( <>
-    "hagnd yagso u"
-    </> );
+  return <>"hagnd yagso u"</>;
 }
 
 export default BrandCard;
