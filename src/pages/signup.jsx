@@ -2,77 +2,87 @@ import React, { useState } from "react";
 import Joi from "joi";
 import { useFormik } from "formik";
 import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
+import { useNavigate, Navigate } from "react-router-dom";
+
 import Input from "../components/input";
-import {createUser}from "../services/userService"
-function Signup() {
-  const [error,setError]=useState("")
+// import { createUser } from "../services/userService";
+import { useAuth } from "../context/auth.context";
+function Signup({ redirect }) {
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const { createUser, user } = useAuth();
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
-      name:"",
-      phone:"",
-      password:"",
-      userEmail: ""
-     
+      name: "",
+      phone: "",
+      password: "",
+      email: "",
     },
     validate: formikValidateUsingJoi({
-      name:Joi.string().min(2).max(10).required(),
+      name: Joi.string().min(2).max(10).required(),
       phone: Joi.string().min(9).max(15).required(),
-      userEmail: Joi.string()
+      password: Joi.string().min(6).max(1024).required(),
+      email: Joi.string()
         .min(6)
         .max(255)
         .required()
         .email({ tlds: { allow: false } }),
-      password: Joi.string().min(6).max(1024).required(),
     }),
 
-    
-   async onSubmit (values)  {
-    try{
-      await  createUser({...values,biz:false});
-      console.log(values);
-    }catch({response}){
-      if (response.status === 400) {
-        setError(response.data);
+    async onSubmit(values) {
+      try {
+        await createUser({ ...values, biz: false });
+        console.log(values);
+        if (redirect) {
+          navigate(redirect);
+        }
+      } catch ({ response }) {
+        if (response.status === 400) {
+          setError(response.data);
+        }
       }
-    }
-  
     },
   });
+  if (user) {
+    return <Navigate to="/" />;
+  }
   return (
     <>
       <div class="container container-table" style={{ width: "600px" }}>
         <form onSubmit={formik.handleSubmit}>
-          {error &&<div className="alert alert-danger">{error}</div>}
-        <Input
+          {error && <div className="alert alert-danger">{error}</div>}
+          <Input
             label="name"
             name="name"
             type="string"
             {...formik.getFieldProps("name")}
-            error={formik.touched.name&&formik.errors.name}
+            error={formik.touched.name && formik.errors.name}
           ></Input>
-           <Input
+          <Input
             label="phone"
             name="phone"
             type="string"
             {...formik.getFieldProps("phone")}
-            error={formik.touched.phone&&formik.errors.phone}
+            error={formik.touched.phone && formik.errors.phone}
           ></Input>
           <Input
             label="password"
             name="password"
             type="password"
             {...formik.getFieldProps("password")}
-            error={formik.touched.password&&formik.errors.password}
+            error={formik.touched.password && formik.errors.password}
           ></Input>
-            <Input
-            label="userEmail"
-            name="userEmail"
+          <Input
+            label="email"
+            name="email"
             type="email"
-            {...formik.getFieldProps("userEmail")}
-            error={formik.touched.userEmail&&formik.errors.userEmail}
+            {...formik.getFieldProps("email")}
+            error={formik.touched.email && formik.errors.email}
           ></Input>
-          <button disabled={!formik.isValid} className="btn btn-primary">Log in</button>
+          <button disabled={!formik.isValid} className="btn btn-primary">
+            sign up
+          </button>
         </form>
       </div>
     </>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../context/auth.context";
 function NavbarHeader() {
+  const { user } = useAuth();
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,38 +41,49 @@ function NavbarHeader() {
                 <i class="bi bi-cart4"></i>
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/login">
-                login
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/signup">
-                sign up
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/signupbiz">
-                business
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/logout">
-                log out
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/addproduct">
-                add product
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/addarticle">
-                add article
-              </Link>
-            </li>
-          </ul>
 
+            {user?.biz && (
+              <>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/addproduct">
+                    add product
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/addarticle">
+                    add article
+                  </Link>
+                </li>
+              </>
+            )}
+            {user ? (
+              <li class="nav-item">
+                <Link class="nav-link" to="/logout">
+                  log out
+                </Link>
+              </li>
+            ) : (
+              <>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/login">
+                    login
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/signup">
+                    sign up
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/signupbiz">
+                    business
+                  </Link>
+                </li>
+              </>
+            )}
+         
+        
+        </ul>
           <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
@@ -84,7 +96,9 @@ function NavbarHeader() {
             </button>
           </form>
         </div>
+     
       </nav>
+
     </>
   );
 }
