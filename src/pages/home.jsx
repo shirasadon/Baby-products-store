@@ -1,7 +1,13 @@
-import NavbarHeader from "../components/navbar";
+import NavbarProduct from "../components/navbarProdacts";
+import Slider from "../components/slider";
 
 function Home() {
-  return null
+  return ( 
+    <>
+    <Slider></Slider>
+    <NavbarProduct></NavbarProduct>
+    </>
+   );
 }
 
 export default Home;
