@@ -1,5 +1,11 @@
+import Article from "../components/article";
+import Articles from "../components/articles";
+
 function Cart() {
-  return <>"gybdscyngydc"</>;
+
+  return <>
+ <Articles></Articles>
+  </>
 }
 
 export default Cart;

@@ -81,9 +81,7 @@ function NavbarHeader() {
                 </li>
               </>
             )}
-         
-        
-        </ul>
+          </ul>
           <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
@@ -96,9 +94,7 @@ function NavbarHeader() {
             </button>
           </form>
         </div>
-     
       </nav>
-
     </>
   );
 }
