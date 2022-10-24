@@ -12,7 +12,8 @@ function AddProduct() {
     initialValues: {
       img:"img",
       title: "title",
-      description: "description"
+      description: "description",
+      category:""
     },
     validate: formikValidateUsingJoi({
       img: Joi.string().min(5).max(1000).required(),
@@ -20,7 +21,8 @@ function AddProduct() {
      description: Joi.string()
         .min(6)
         .max(2000)
-        .required()
+        .required(),
+        category: Joi.string().min(4).max(30).required(),
     }),
     async onSubmit(values) {
       try {
@@ -57,6 +59,13 @@ function AddProduct() {
         type="string"
         {...formik.getFieldProps("description")}
         error={formik.touched.description && formik.errors.description}
+      ></Input>
+       <Input
+        label="category"
+        name="category"
+        type="string"
+        {...formik.getFieldProps("category")}
+        error={formik.touched.category && formik.errors.category}
       ></Input>
       <button disabled={!formik.isValid} className="btn btn-primary">
        Add product

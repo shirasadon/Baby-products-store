@@ -4,6 +4,15 @@ import httpService from "./httpService";
     return httpService.post("/products",product)
  }
 
- const productService ={createProduct}
+export function getProductToys(){
+   return httpService.get("/products/toys");
+};
+
+export function getProductBabycarriges(){
+   return httpService.get("/products/babycarriges");
+};
+
+
+ const productService ={createProduct,getProductToys,getProductBabycarriges}
 
  export default productService

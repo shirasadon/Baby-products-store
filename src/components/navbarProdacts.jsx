@@ -6,7 +6,7 @@ function NavbarProduct() {
       <div class="container" style={{ backgroundColor: "#ffe4e1" }}>
         <div class="row">
           <div class="col-sm">
-            <Link to="/babycarriges" class="navbar-brand">
+            <Link to="/products/babycarriges" class="navbar-brand">
               <img
                 style={{
                   height: "50px",
@@ -61,7 +61,7 @@ function NavbarProduct() {
             </Link>
           </div>
           <div class="col-sm">
-            <Link to="/toys" class="navbar-brand">
+            <Link to="/products/toys" class="navbar-brand">
               {" "}
               <img
                 style={{

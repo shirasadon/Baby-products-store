@@ -1,7 +1,8 @@
-import Article from "./article";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import articlesService from "../services/articlesService";
+import Article from "./article";
 function Articles() {
   const [articles, setArticles] = useState([]);
   async function  getAllArticles() {
@@ -17,10 +18,9 @@ function Articles() {
         {!articles.length ? (
           <p>No Articles</p>
         ) : (
-          articles.map((article) => {
-            <Article key={article._id} article={article}/>;
-            console.log(article);
-          })
+          articles.map((article) => (
+            <Article key={article._id} article={article}/>
+          ))
         )}
       </div>
     </>

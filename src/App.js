@@ -14,6 +14,11 @@ import AddProduct from "./pages/addproduct";
 import AddArticle from "./pages/addarticle";
 import HeaderPage from "./components/headerPage";
 import Footer from "./components/footer";
+import Articles from "./components/articles";
+import Article from "./components/article";
+import Toys from "./pages/toys";
+import Brands from "./pages/brands";
+import Babycarriges from "./pages/babyCarriges";
 function App() {
   return (
     <>
@@ -31,6 +36,9 @@ function App() {
           <Route path="/signupbiz" element={<SignupBiz redirect="/login" />} />
           <Route path="/addproduct" element={<AddProduct />} />
           <Route path="/addarticle" element={<AddArticle />} />
+          <Route path="/products/toys" element={<Toys />} />
+          <Route path="/products/babycarriges" element={<Babycarriges />} />
+          
         </Routes>
       </div>
       <Footer></Footer>
