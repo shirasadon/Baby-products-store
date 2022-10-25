@@ -4,10 +4,10 @@ import CardProduct from "../components/cardProduct";
 import productService from "../services/productService";
 
 function Babycarriges() {
-  const [babycarriges,setBabycarriges]=useState([]);
+  const [products,setProducts]=useState([]);
   async function getProductBabycarrigesCategory(){
     const {data}=await productService.getProductBabycarriges();
-    setBabycarriges(data);
+    setProducts(data);
   }
   useEffect(()=>{
     getProductBabycarrigesCategory();
@@ -15,11 +15,11 @@ function Babycarriges() {
   return(
 <>
 <div className="row">
-        {!babycarriges.length ? (
+        {!products.length ? (
           <p>No Products</p>
         ) : (
-          babycarriges.map((babycarriges) => (
-            <CardProduct key={babycarriges._id} babycarriges={babycarriges}/>
+          products.map((product) => (
+            <CardProduct key={product._id} product={product}/>
           ))
         )}
       </div>

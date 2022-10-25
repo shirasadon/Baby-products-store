@@ -12,7 +12,10 @@ export function getProductBabycarriges(){
    return httpService.get("/products/babycarriges");
 };
 
+export function getProductChair(){
+   return httpService.get("/products/chairsafty");
+};
 
- const productService ={createProduct,getProductToys,getProductBabycarriges}
+ const productService ={createProduct,getProductToys,getProductBabycarriges,getProductChair}
 
  export default productService

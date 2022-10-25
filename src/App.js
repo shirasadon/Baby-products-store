@@ -17,8 +17,8 @@ import Footer from "./components/footer";
 import Articles from "./components/articles";
 import Article from "./components/article";
 import Toys from "./pages/toys";
-import Brands from "./pages/brands";
 import Babycarriges from "./pages/babyCarriges";
+import Chairsafety from "./pages/careSafety";
 function App() {
   return (
     <>
@@ -38,6 +38,7 @@ function App() {
           <Route path="/addarticle" element={<AddArticle />} />
           <Route path="/products/toys" element={<Toys />} />
           <Route path="/products/babycarriges" element={<Babycarriges />} />
+          <Route path="/products/chairsafty" element={<Chairsafety />} />
           
         </Routes>
       </div>
