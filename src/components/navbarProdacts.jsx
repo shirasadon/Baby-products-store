@@ -19,7 +19,7 @@ function NavbarProduct() {
             </Link>
           </div>
           <div class="col-sm">
-            <Link to="/clothingandfootweare" class="navbar-brand">
+            <Link to="/products/clothingandfootweare" class="navbar-brand">
               {" "}
               <img
                 style={{
@@ -57,7 +57,7 @@ function NavbarProduct() {
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/3262/3262527.png"
               ></img>
-              toys
+              Safety Chair
             </Link>
           </div>
           <div class="col-sm">

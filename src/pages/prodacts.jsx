@@ -18,6 +18,7 @@ function Products() {
       <Link to="/products/clothingandfootweare" class="nav-item nav-link active">Clothing and Footweare </Link>
       <Link to="/products/furniture" class="nav-item nav-link active">Baby Furniture </Link>
       <Link to="/products/toys" class="nav-item nav-link active">Toys</Link>
+
     </div>
   </div>
 </nav>

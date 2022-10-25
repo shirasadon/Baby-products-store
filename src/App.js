@@ -19,6 +19,7 @@ import Article from "./components/article";
 import Toys from "./pages/toys";
 import Babycarriges from "./pages/babyCarriges";
 import Chairsafety from "./pages/careSafety";
+import ClothingAndFootweare from "./pages/clothingAndFootweare";
 function App() {
   return (
     <>
@@ -39,7 +40,8 @@ function App() {
           <Route path="/products/toys" element={<Toys />} />
           <Route path="/products/babycarriges" element={<Babycarriges />} />
           <Route path="/products/chairsafty" element={<Chairsafety />} />
-          
+          <Route path="/products/clothingandfootweare" element={<ClothingAndFootweare />} />
+
         </Routes>
       </div>
       <Footer></Footer>
