@@ -33,7 +33,7 @@ function NavbarProduct() {
             </Link>
           </div>
           <div class="col-sm">
-            <Link to="/furniture" class="navbar-brand">
+            <Link to="/products/furniture" class="navbar-brand">
               {" "}
               <img
                 style={{
