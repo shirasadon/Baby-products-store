@@ -14,6 +14,8 @@ import AddProduct from "./pages/addproduct";
 import AddArticle from "./pages/addarticle";
 import HeaderPage from "./components/headerPage";
 import Footer from "./components/footer";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import Articles from "./components/articles";
 import Article from "./components/article";
 import Toys from "./pages/toys";
@@ -26,6 +28,7 @@ function App() {
     <>
       <HeaderPage></HeaderPage>
       <div className="App">
+      <ToastContainer></ToastContainer>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

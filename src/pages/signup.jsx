@@ -35,6 +35,7 @@ function Signup({ redirect }) {
         await createUser({ ...values, biz: false });
         console.log(values);
         if (redirect) {
+          toast("Your account is ready 👏");
           navigate(redirect);
         }
       } catch ({ response }) {

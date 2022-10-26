@@ -36,6 +36,7 @@ function SignupBiz({ redirect }) {
         // await login({ email: values.email, password: values.password })
         console.log(values);
         if (redirect) {
+          toast("Your account is ready 👏");
           navigate(redirect);
         }
       } catch ({ response }) {
