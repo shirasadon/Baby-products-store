@@ -23,6 +23,7 @@ import Babycarriges from "./pages/babyCarriges";
 import Chairsafety from "./pages/careSafety";
 import ClothingAndFootweare from "./pages/clothingAndFootweare";
 import Furniture from "./pages/furniture";
+import AddProductToCart from "./components/addproducttocart";
 function App() {
   return (
     <>
@@ -46,7 +47,8 @@ function App() {
           <Route path="/products/chairsafty" element={<Chairsafety />} />
           <Route path="/products/clothingandfootweare" element={<ClothingAndFootweare />} />
           <Route path="/products/furniture" element={<Furniture />} />
-
+          <Route path="/addProductToCart" element={<AddProductToCart />} />
+          <Route path="/cart" element={<Cart />} />
 
         </Routes>
       </div>

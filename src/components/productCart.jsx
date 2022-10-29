@@ -8,10 +8,12 @@ const styleCard = {
     fontFamily: "cursive",
     fontSize: ""
 };
-function CardProduct({product}) {
-    const {img,title,description,category}=product
-    return ( <>
-     <Card style={styleCard} >
+
+function ProductCart({product}) {
+    const { _id, title, category, description, img } = product;
+    return ( 
+        <>
+         <Card style={styleCard} >
         <Card.Img
           style={{ width: "180px", height: "180px" }}
           variant="top"
@@ -23,11 +25,9 @@ function CardProduct({product}) {
           <Card.Text>{category}</Card.Text>
           <br />
         </Card.Body>
-        <Link  to={`/addProductToCart`} className="card-link">
-       <i className = "bi bi-cart"></i>
-        </Link>
 </Card>
-    </> );
+        </>
+     );
 }
 
-export default CardProduct;
+export default ProductCart;
