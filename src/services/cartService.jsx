@@ -4,5 +4,11 @@ import httpService from "./httpService";
     return httpService.get("/cart");
   };
   
-const cartService={getProducCart}
+  export const deleteproductFromCart = (product) => {
+    const productId=product._id
+    delete product._id
+    return httpService.delete(`/cart/${productId}`,product);
+  };
+  
+const cartService={getProducCart,deleteproductFromCart}
   export default cartService

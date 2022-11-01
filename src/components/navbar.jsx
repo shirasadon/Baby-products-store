@@ -54,6 +54,11 @@ function NavbarHeader() {
                     add article
                   </Link>
                 </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/ViewAllProducts">
+                  View all products
+                  </Link>
+                </li>
               </>
             )}
             {user ? (

@@ -24,6 +24,7 @@ import Chairsafety from "./pages/careSafety";
 import ClothingAndFootweare from "./pages/clothingAndFootweare";
 import Furniture from "./pages/furniture";
 import AddProductToCart from "./components/addproducttocart";
+import ViewAllProducts from "./pages/viewAllProducts";
 function App() {
   return (
     <>
@@ -49,7 +50,8 @@ function App() {
           <Route path="/products/furniture" element={<Furniture />} />
           <Route path="/addProductToCart" element={<AddProductToCart />} />
           <Route path="/cart" element={<Cart />} />
-
+          <Route path="/ViewAllProducts" element={<ViewAllProducts />} />
+          
         </Routes>
       </div>
       <Footer></Footer>
