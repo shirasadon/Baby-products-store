@@ -27,9 +27,13 @@ export function getProductClose(){
 export function getProductFurniture(){
    return httpService.get("/products/furniture");
 };
+export function ViewAllProducts(){
+   return httpService.get("/products/ViewAllProducts");
+};
+export function editProduct(id,product){
+   return httpService.put(`/products/${id}`,product);
+};
 
-
-
- const productService ={createProduct,getProductToys,getProductBabycarriges,getProductChair,getProductClose,getProductFurniture,addproducttocart}
+ const productService ={createProduct,getProductToys,getProductBabycarriges,getProductChair,getProductClose,getProductFurniture,addproducttocart,editProduct,ViewAllProducts}
 
  export default productService
