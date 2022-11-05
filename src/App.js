@@ -26,6 +26,7 @@ import Furniture from "./pages/furniture";
 import AddProductToCart from "./components/addproducttocart";
 import ViewAllProducts from "./pages/viewAllProducts";
 import EditProduct from "./components/editProduct";
+import DeleteProduct from "./components/deleteProduct";
 function App() {
   return (
     <>
@@ -53,7 +54,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/ViewAllProducts" element={<ViewAllProducts />} />
           <Route path="/products/editProduct" element={<EditProduct />} />
-          {/* <Route path="/deleteProduct" element={} /> */}
+          <Route path="/products/:id" element={<DeleteProduct/>} />
           
         </Routes>
       </div>

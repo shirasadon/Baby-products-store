@@ -34,6 +34,10 @@ export function editProduct(id,product){
    return httpService.put(`/products/${id}`,product);
 };
 
- const productService ={createProduct,getProductToys,getProductBabycarriges,getProductChair,getProductClose,getProductFurniture,addproducttocart,editProduct,ViewAllProducts}
+export function deleteProduct(id) {
+   return httpService.delete(`/products/${id}`);
+ }
+
+ const productService ={createProduct,getProductToys,getProductBabycarriges,getProductChair,getProductClose,getProductFurniture,addproducttocart,editProduct,ViewAllProducts,deleteProduct}
 
  export default productService
