@@ -7,7 +7,6 @@ import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
 import { useNavigate, Navigate } from "react-router-dom";
 
 import Input from "../components/input";
-// import { createUser } from "../services/userService";
 import { useAuth } from "../context/auth.context";
 function Signup({ redirect }) {
   const navigate = useNavigate();

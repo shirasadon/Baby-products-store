@@ -1,4 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import Favicon from "react-favicon";
 import "./App.css";
 import NavbarHeader from "./components/navbar";
 import Home from "./pages/home";
@@ -30,9 +33,10 @@ import DeleteProduct from "./components/deleteProduct";
 function App() {
   return (
     <>
-      <HeaderPage></HeaderPage>
-      <div className="App">
-      <ToastContainer></ToastContainer>
+      <div>
+        <Favicon url="https://cdn-icons-png.flaticon.com/128/1687/1687871.png" />
+        <HeaderPage></HeaderPage>
+        <ToastContainer></ToastContainer>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -43,19 +47,27 @@ function App() {
           <Route path="/login" element={<Login redirect="/" />} />
           <Route path="/signup" element={<Signup redirect="/login" />} />
           <Route path="/signupbiz" element={<SignupBiz redirect="/login" />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/addarticle" element={<AddArticle />} />
+          <Route path="/addproduct" element={<AddProduct redirect="/home" />} />
+          <Route path="/addarticle" element={<AddArticle redirect="/home" />} />
           <Route path="/products/toys" element={<Toys />} />
           <Route path="/products/babycarriges" element={<Babycarriges />} />
           <Route path="/products/chairsafty" element={<Chairsafety />} />
-          <Route path="/products/clothingandfootweare" element={<ClothingAndFootweare />} />
+          <Route
+            path="/products/clothingandfootweare"
+            element={<ClothingAndFootweare />}
+          />
           <Route path="/products/furniture" element={<Furniture />} />
-          <Route path="/addProductToCart" element={<AddProductToCart />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/products/ViewAllProducts" element={<ViewAllProducts />} />
+          <Route
+            path="/products/ViewAllProducts"
+            element={<ViewAllProducts />}
+          />
           <Route path="/products/editProduct" element={<EditProduct />} />
-          <Route path="/products/:id" element={<DeleteProduct/>} />
-          
+          <Route path="/products/delete/:id" element={<DeleteProduct />} />
+          <Route
+            path="/cart/addproduct"
+            element={<AddProductToCart redirect="cart" />}
+          />
         </Routes>
       </div>
       <Footer></Footer>

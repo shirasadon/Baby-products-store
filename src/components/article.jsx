@@ -7,11 +7,11 @@ const styleCard = {
   fontFamily: "cursive",
   fontSize: "",
 };
-function Article( {article} ) {
-  const {img, title, text}=article
+function Article({ article }) {
+  const { img, title, text } = article;
   return (
     <>
-  <Card style={styleCard} >
+      <Card style={styleCard}>
         <Card.Img
           style={{ width: "180px", height: "180px" }}
           variant="top"
@@ -22,10 +22,8 @@ function Article( {article} ) {
           <Card.Text>{text}</Card.Text>
           <br />
         </Card.Body>
-</Card>
-</>
-    
-  
+      </Card>
+    </>
   );
 }
 

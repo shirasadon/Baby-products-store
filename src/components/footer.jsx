@@ -104,6 +104,11 @@ function Footer() {
           </div>
         </div>
       </div>
+      <div>
+        <h3>Shira Saadon</h3>
+        <h6>054-5543354</h6>
+        <h6>ahirasa199@gmail.com</h6>
+      </div>
     </>
   );
 }

@@ -4,23 +4,40 @@ function NavbarHeader() {
   const { user } = useAuth();
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container" id="navbarSupportedContent">
+   <nav style={{  height: "100px",
+    backgroundColor: "#ffe4e1"}}
+    className="navbar navbar-expand-sm " 
+       aria-label="Third navbar example"
+       >
+        <div className="container"
+         id="navbarSupportedContent">
+           <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample03"
+          aria-controls="navbarsExample03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarsExample03">
           <ul className="navbar-nav me-auto mb-2 mb-sm-0">
-            <li class="nav-item">
-              <Link class="nav-link" to="/">
+            <li className="nav-item">
+              <Link to="/" className="nav-link" >
                 Home
               </Link>
             </li>
 
-            <li class="nav-item">
-              <Link class="nav-link" to="/about">
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
                 about
               </Link>
             </li>
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <Link
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -31,65 +48,65 @@ function NavbarHeader() {
                 products
               </Link>
             </li>
-            <li class="nav-item dropdown">
-              <Link class="nav-link" to="/contact">
+            <li className="nav-item dropdown">
+              <Link className="nav-link" to="/contact">
                 contact us
               </Link>
             </li>
             <li>
-              <Link class="nav-link" to="/cart">
-                <i class="bi bi-cart4"></i>
+              <Link className="nav-link" to="/cart">
+                <i className="bi bi-cart4"></i>
               </Link>
             </li>
 
             {user?.biz && (
               <>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/addproduct">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/addproduct">
                     add product
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/addarticle">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/addarticle">
                     add article
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/products/ViewAllProducts">
-                  View all products
+                <li className="nav-item">
+                  <Link className="nav-link" to="/products/ViewAllProducts">
+                    View all products
                   </Link>
                 </li>
               </>
             )}
             {user ? (
-              <li class="nav-item">
-                <Link class="nav-link" to="/logout">
+              <li className="nav-item">
+                <Link className="nav-link" to="/logout">
                   log out
                 </Link>
               </li>
             ) : (
               <>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/login">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
                     login
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/signup">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signup">
                     sign up
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/signupbiz">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signupbiz">
                     business
                   </Link>
                 </li>
               </>
             )}
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <form className="form-inline my-2 my-lg-0">
             <input
-              class="form-control mr-sm-2"
+              className="form-control mr-sm-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -99,7 +116,9 @@ function NavbarHeader() {
             </button>
           </form>
         </div>
+        </div>
       </nav>
+     
     </>
   );
 }

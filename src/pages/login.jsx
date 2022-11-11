@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
 import Input from "../components/input";
 import { useAuth } from "../context/auth.context";
+import { toast } from "react-toastify";
 
 function Login({ redirect, redirectBiz }) {
   const { login, user } = useAuth();
@@ -31,6 +32,7 @@ function Login({ redirect, redirectBiz }) {
         await login(values);
 
         if (redirect) {
+          toast("You've logged in successfully! 👏");
           navigate(redirect);
         }
       } catch ({ response }) {

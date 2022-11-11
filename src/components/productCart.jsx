@@ -2,25 +2,28 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import cartService from "../services/cartService";
+import { toast } from "react-toastify";
+
 const styleCard = {
-    width: "17rem",
-    backgroundColor: "",
-    margin: "15px",
-    color: "#bf2b7a",
-    fontFamily: "cursive",
-    fontSize: ""
+  width: "17rem",
+  backgroundColor: "",
+  margin: "15px",
+  color: "#bf2b7a",
+  fontFamily: "cursive",
+  fontSize: "",
 };
 
-function ProductCart({product}) {
-  const [refresh,setRefresh]=useState(false)
-    const { _id, title, category, description, img } = product;
-    const removeProductFromCart = async (id) => {
-      await cartService.deleteproductFromCart(id);
-      setRefresh(!refresh);
-    };
-    return (
-       <div>
-         <Card style={styleCard} >
+function ProductCart({ product }) {
+  const [refresh, setRefresh] = useState(false);
+  const { _id, title, category, description, img } = product;
+  const removeProductFromCart = async (id) => {
+    await cartService.deleteproductFromCart(id);
+    toast("The product has been successfully deleted from the cart")
+    setRefresh(!refresh);
+  };
+  return (
+    <div>
+      <Card style={styleCard}>
         <Card.Img
           style={{ width: "180px", height: "180px" }}
           variant="top"
@@ -83,14 +86,13 @@ function ProductCart({product}) {
                 >
                   delete product from cart
                 </button>
-                </div>
-                </div>
-                </div>
-                </div>
-</Card>
-
+              </div>
+            </div>
+          </div>
         </div>
-     )
+      </Card>
+    </div>
+  );
 }
 
 export default ProductCart;

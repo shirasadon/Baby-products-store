@@ -4,25 +4,27 @@ import { useEffect } from "react";
 import cartService from "../services/cartService";
 
 function Cart() {
-  const [products,setProducts]=useState([]);
-  async function getProductInCart(){
-    const {data}=await cartService.getProducCart();
+  const [products, setProducts] = useState([]);
+  async function getProductInCart() {
+    const { data } = await cartService.getProducCart();
     setProducts(data);
   }
-  useEffect(()=>{
+  useEffect(() => {
     getProductInCart();
-  },[])
-  return <>
-   <div className="row">
+  }, []);
+  return (
+    <>
+      <div className="row">
         {!products.length ? (
           <p>No Products</p>
         ) : (
           products.map((product) => (
-            <ProductCart key={product._id} product={product}/>
+            <ProductCart key={product._id} product={product} />
           ))
         )}
       </div>
-  </>
+    </>
+  );
 }
 
 export default Cart;
