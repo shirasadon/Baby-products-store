@@ -1,17 +1,13 @@
+import "../style/footer.css"
+
+
+
 function Footer() {
-  const styleDiv = {
-    backgroundColor: "#ffe4e1",
-    margin: "5px",
-    fontSize: "16px",
-    height: "150px",
-    textAlign: "center",
-    padding: "30px",
-  };
   return (
     <>
-      <div>
-        <div style={{ width: "1531px" }} class="row">
-          <div style={styleDiv} class="col-sm">
+      <div >
+        <div class="row" >
+          <div className="styleDiv" class="styleDiv  col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -26,7 +22,7 @@ function Footer() {
             <br />
             Advice in the purchase process
           </div>
-          <div style={styleDiv} class="col-sm">
+          <div className="styleDiv" class="styleDiv  col-sm" >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -41,7 +37,7 @@ function Footer() {
             <br />
             leading brands
           </div>
-          <div style={styleDiv} class="col-sm">
+          <div className="styleDiv" class="styleDiv col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -57,7 +53,7 @@ function Footer() {
             <br />
             Attractive prices
           </div>
-          <div style={styleDiv} class="col-sm">
+          <div className="styleDiv" class="styleDiv  col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -72,7 +68,7 @@ function Footer() {
             <br />
             Nationwide network
           </div>
-          <div style={styleDiv} class="col-sm">
+          <div className="styleDiv" class="styleDiv col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -87,7 +83,7 @@ function Footer() {
             <br />
             Express deliveries
           </div>
-          <div style={styleDiv} class="col-sm">
+          <div className="styleDiv" class="styleDiv col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -104,10 +100,12 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div>
+      <div class= "row">
+        <div className="contactInformation" class="contactInformation col-sm">
         <h3>Shira Saadon</h3>
         <h6>054-5543354</h6>
         <h6>ahirasa199@gmail.com</h6>
+      </div>
       </div>
     </>
   );
