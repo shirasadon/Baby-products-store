@@ -1,28 +1,26 @@
-import Card from "react-bootstrap/Card";
-const styleCard = {
-  width: "17rem",
-  backgroundColor: "",
-  margin: "15px",
-  color: "#bf2b7a",
-  fontFamily: "cursive",
-  fontSize: "",
-};
+import "../style/article.css"
+import { Link } from "react-router-dom";
 function Article({ article }) {
-  const { img, title, text } = article;
+  const { _id,img, title, text } = article;
   return (
     <>
-      <Card style={styleCard}>
-        <Card.Img
-          style={{ width: "180px", height: "180px" }}
-          variant="top"
-          src={img}
-        />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{text}</Card.Text>
-          <br />
-        </Card.Body>
-      </Card>
+
+<div className="a-box" class="a-box">
+  <div className="img-container" class="img-container">
+    <div className="img-inner" class="img-inner">
+      <div className="inner-skew" class="inner-skew">
+        <img src={img}/>
+      </div>
+    </div>
+  </div>
+  <div className="text-container" class="text-container">
+    <h3>{title}</h3>
+    <div>
+     {text}
+  </div>
+  <Link to={{pathname:`/readMore/${_id}`,data:[{articleid:article._id,articleImg:article.img,articleTitle:article.title,aricleText:article.text}]}}>read more</Link>
+</div>
+</div>
     </>
   );
 }

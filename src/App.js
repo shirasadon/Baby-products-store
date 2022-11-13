@@ -30,6 +30,7 @@ import AddProductToCart from "./components/addproducttocart";
 import ViewAllProducts from "./pages/viewAllProducts";
 import EditProduct from "./components/editProduct";
 import DeleteProduct from "./components/deleteProduct";
+import ReadMoreArticle from "./pages/readMoreArticle";
 function App() {
   return (
     <>
@@ -47,8 +48,8 @@ function App() {
           <Route path="/login" element={<Login redirect="/" />} />
           <Route path="/signup" element={<Signup redirect="/login" />} />
           <Route path="/signupbiz" element={<SignupBiz redirect="/login" />} />
-          <Route path="/addproduct" element={<AddProduct redirect="/home" />} />
-          <Route path="/addarticle" element={<AddArticle redirect="/home" />} />
+          <Route path="/addproduct" element={<AddProduct redirect="/" />} />
+          <Route path="/addarticle" element={<AddArticle redirect="/" />} />
           <Route path="/products/toys" element={<Toys />} />
           <Route path="/products/babycarriges" element={<Babycarriges />} />
           <Route path="/products/chairsafty" element={<Chairsafety />} />
@@ -68,6 +69,8 @@ function App() {
             path="/cart/addproduct"
             element={<AddProductToCart redirect="cart" />}
           />
+             <Route path="/readMore/:id" element={<ReadMoreArticle />} />
+          
         </Routes>
       </div>
       <Footer></Footer>

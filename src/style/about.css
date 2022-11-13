@@ -1,0 +1,22 @@
+.styleabout {
+    background-color: #ffe4e1;
+    padding: 10px;
+  }
+  .h3About{
+    font-size:40px;
+    padding:5px;
+    color: #00cccc;
+    text-align: center;
+  }
+  .paragraphAbout{
+    font-size:20px;
+    padding: 30px;
+    color: #00cccc;
+  }
+  .imgAbout{
+
+  }
+  .h2About{
+    color: #00cccc;
+    font-size:50px
+  }

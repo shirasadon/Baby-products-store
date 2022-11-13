@@ -1,14 +1,19 @@
 import PageImage from "../components/pageImage";
+import "../style/about.css"
 const styleFont = {
   fontFamily: "Vollkorn,serif",
 };
 function About() {
   return (
     <>
-      <PageImage title={"about us"}></PageImage>
-      <div style={{ width: "850px", fontSize: "20px" }}>
-        <h3> Nice to meet you</h3>
-        <p style={styleFont}>
+  
+      {/* <PageImage title={"about us"}></PageImage> */}
+      <br />
+      <h2  className="h2About" class="h2About">About us..</h2>
+      <section class="row"> 
+      <div className="styleabout" class=" styleabout col-sm ">
+        <h3 className="h3About" class="h3About"> Nice to meet you</h3>
+        <p className="paragraphAbout" class="paragraphAbout" style={styleFont}>
           We started our journey 10 years ago with a small store and a warm and
           beloved clientele, and today we are a leading chain in Israel for baby
           products, with 10 large and spacious branches nationwide, with several
@@ -37,6 +42,13 @@ function About() {
           personal service and lots of love.
         </p>
       </div>
+      <div class="col-sm">
+<img  src="https://agalease-baby.co.il/wp-content/uploads/2020/12/6-9.jpg" alt="" />
+      </div>
+      </section>
+      <br />
+      <br />
+
     </>
   );
 }

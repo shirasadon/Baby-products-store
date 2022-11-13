@@ -17,9 +17,12 @@ function Articles() {
         {!articles.length ? (
           <p style={{textAlign:"center", color:"#e6004c",fontSize:"50px"}}>No Articles</p>
         ) : (
+       
           articles.map((article) => (
-            <Article key={article._id} article={article} />
+            <div class="col-sm">  <Article key={article._id} article={article} />  </div>
+           
           ))
+        
         )}
       </div>
     </>

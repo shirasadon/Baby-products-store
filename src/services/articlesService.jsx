@@ -7,6 +7,11 @@ export const createArticle = (article) => {
 export function getArticles() {
   return httpService.get("/articles");
 }
+export function getArticle( article,_id) {
+  const articlrId=article._id
+  return httpService.get(`/articles/${articlrId}`);
+}
 
-const articlesService = { createArticle, getArticles };
+
+const articlesService = { createArticle, getArticles,getArticle };
 export default articlesService;
