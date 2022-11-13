@@ -43,7 +43,7 @@ function About() {
         </p>
       </div>
       <div class="col-sm">
-<img  src="https://agalease-baby.co.il/wp-content/uploads/2020/12/6-9.jpg" alt="" />
+<img  src="https://agalease-baby.co.il/wp-content/uploads/2020/12/6-9.jpg" alt="About us" />
       </div>
       </section>
       <br />

@@ -1,0 +1,33 @@
+.divContact{
+    /* width: 900px; */
+    margin: auto;
+    position: relative;
+    height:650px;
+   
+}
+.divChild{
+ position: absolute;
+    top:20%;
+    left: 50%;
+    bottom: 40%;
+}
+.contactus{
+    font-size: 35px;
+    color:#00cccc
+}
+.divLocation{
+    position: absolute;
+    top:20%;
+    left: 10%;
+    bottom: 40%;
+}
+.paragraphService{
+    font-size: 20px;
+    color:#00cccc
+}
+
+    .mainTitle{
+        font-size: 25px;
+        color:#00cccc
+    }
+
