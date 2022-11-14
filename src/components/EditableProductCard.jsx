@@ -24,21 +24,28 @@ function EditableProductCard({ product }) {
   };
   return (
     <>
-      <Card style={styleCard}>
-        <Card.Img
-          style={{ width: "180px", height: "180px" }}
-          variant="top"
-          src={img}
-        />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Card.Text>{category}</Card.Text>
-          <br />
-          </Card.Body>
-        <button
+<div class="container" style={{marginTop:"50px",width:"300px"}}>
+        <div >
+            <div >
+                <div class="card-sl">
+                    <div class="card-image">
+                        <img
+                            src={img} />
+                    </div>
+
+             
+                    <div class="card-heading">
+                      {title}
+                    </div>
+                    <div class="card-text">
+                       {description}
+                    </div>
+                    <div class="card-text">
+                     {category}
+                    </div>
+        <button  class="buttoncart"
           type="button"
-          className="btn btn-warning mx-2"
+          className="buttoncart"
           data-bs-toggle="modal"
           data-bs-target="#editmodal"
         >
@@ -47,9 +54,10 @@ function EditableProductCard({ product }) {
         <EditProduct product={product} EditProduct={EditProduct}></EditProduct>
 
 
-        <button
+        <button 
           type="button"
-          className="btn btn-danger"
+          class="buttoncart2"
+          className="buttoncart2"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
@@ -102,8 +110,10 @@ function EditableProductCard({ product }) {
             </div>
           </div>
         </div>
-      
-      </Card>
+        </div>
+        </div>
+        </div>
+        </div>
     </>
   );
 }
