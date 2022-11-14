@@ -71,7 +71,8 @@ function AddArticle({ redirect }) {
             {...formik.getFieldProps("alt")}
             error={formik.touched.alt && formik.errors.alt}
           ></Input>
-          <button disabled={!formik.isValid} className="btn btn-primary">
+          <br />
+          <button disabled={!formik.isValid} className="input button">
             Add article
           </button>
         </form>

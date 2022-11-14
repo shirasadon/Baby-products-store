@@ -17,8 +17,8 @@ function AddProduct() {
       img: "img",
       title: "title",
       description: "description",
-      category: "",
-      alt: "",
+      category: "category",
+      alt: "alt",
     },
     validate: formikValidateUsingJoi({
       img: Joi.string().min(5).max(1000).required(),
@@ -80,7 +80,8 @@ function AddProduct() {
             {...formik.getFieldProps("alt")}
             error={formik.touched.alt && formik.errors.alt}
           ></Input>
-          <button disabled={!formik.isValid} className="btn btn-primary">
+          <br />
+          <button disabled={!formik.isValid} className="input button">
             Add product
           </button>
         </form>

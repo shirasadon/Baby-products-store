@@ -8,6 +8,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 
 import Input from "../components/input";
 import { useAuth } from "../context/auth.context";
+
 function Signup({ redirect }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -58,6 +59,7 @@ function Signup({ redirect }) {
             label="name"
             name="name"
             type="string"
+            placeholder="name"
             {...formik.getFieldProps("name")}
             error={formik.touched.name && formik.errors.name}
           ></Input>
@@ -65,6 +67,7 @@ function Signup({ redirect }) {
             label="phone"
             name="phone"
             type="string"
+            placeholder="phon"
             {...formik.getFieldProps("phone")}
             error={formik.touched.phone && formik.errors.phone}
           ></Input>
@@ -72,6 +75,7 @@ function Signup({ redirect }) {
             label="password"
             name="password"
             type="password"
+            placeholder="password"
             {...formik.getFieldProps("password")}
             error={formik.touched.password && formik.errors.password}
           ></Input>
@@ -79,10 +83,12 @@ function Signup({ redirect }) {
             label="email"
             name="email"
             type="email"
+            placeholder="Email"
             {...formik.getFieldProps("email")}
             error={formik.touched.email && formik.errors.email}
           ></Input>
-          <button disabled={!formik.isValid} className="btn btn-primary">
+          <br />
+          <button  className="input button" disabled={!formik.isValid} >
             sign up
           </button>
         </form>

@@ -60,6 +60,8 @@ function SignupBiz({ redirect }) {
             label="name"
             name="name"
             type="string"
+            placeholder="name"
+
             {...formik.getFieldProps("name")}
             error={formik.touched.name && formik.errors.name}
           ></Input>
@@ -67,6 +69,8 @@ function SignupBiz({ redirect }) {
             label="phone"
             name="phone"
             type="string"
+            placeholder="phone"
+
             {...formik.getFieldProps("phone")}
             error={formik.touched.phone && formik.errors.phone}
           ></Input>
@@ -74,6 +78,7 @@ function SignupBiz({ redirect }) {
             label="password"
             name="password"
             type="password"
+            placeholder="password"
             {...formik.getFieldProps("password")}
             error={formik.touched.password && formik.errors.password}
           ></Input>
@@ -81,10 +86,13 @@ function SignupBiz({ redirect }) {
             label="email"
             name="email"
             type="email"
+            placeholder="Email"
             {...formik.getFieldProps("email")}
             error={formik.touched.email && formik.errors.email}
           ></Input>
-          <button disabled={!formik.isValid} className="btn btn-primary">
+          <br />
+          <button className="input button" disabled={!formik.isValid} >
+            
             sign up Business
           </button>
         </form>

@@ -54,12 +54,12 @@ function Login({ redirect, redirectBiz }) {
   <form onSubmit={formik.handleSubmit} >
   {error && <div className="alert alert-danger">{error}</div>}
     <p>Welcome</p>
-    <input  label="email"
+    <Input className="input"  label="email"
             name="email"
             type="email"
             {...formik.getFieldProps("email")}
-            error={formik.touched.email && formik.errors.email}  class="email" placeholder="Email"/><br/><br />
-    <input label="password"
+            error={formik.touched.email && formik.errors.email}  class="email input" placeholder="Email"/><br/><br />
+    <Input label="password"
             name="password"
             type="password"
             {...formik.getFieldProps("password")}
