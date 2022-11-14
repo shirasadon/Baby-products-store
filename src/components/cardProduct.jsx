@@ -4,7 +4,7 @@ import AddProductToCart from "./addproducttocart";
 import "../style/productCart.css"
 
 function CardProduct({ product }) {
-  const { _id, img, title, description, category } = product;
+  const { _id, img, title, description, category,price } = product;
   return (
     <>
 <div class="container" style={{marginTop:"50px",width:"300px"}}>
@@ -12,7 +12,7 @@ function CardProduct({ product }) {
             <div >
                 <div class="card-sl">
                     <div class="card-image">
-                        <img
+                        <img  style={{ width: "180px", height: "180px" }}
                             src={img} />
                     </div>
 
@@ -24,11 +24,11 @@ function CardProduct({ product }) {
                        {description}
                     </div>
                     <div class="card-text">
-                     {category}
+                   {price}
                     </div>
                   
                  
-                    <button
+                    <button 
           type="button"
           class="buttoncart"
           className="buttoncart"
@@ -46,34 +46,7 @@ function CardProduct({ product }) {
            </div>
                     </div>
                     </div>
-      {/* <Card style={styleCard}>
-        <Card.Img
-          style={{ width: "180px", height: "180px" }}
-          variant="top"
-          src={img}
-        />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Card.Text>{category}</Card.Text>
-          <br />
-        </Card.Body> */}
-        {/* <Link  to={`/products/addproducttocart/${_id}`} className="card-link">
-       <i className = "bi bi-cart"></i>
-        </Link> */}
-        {/* <button
-          type="button"
-          className="btn btn-warning mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#editmodal"
-        >
-          Add product to cart <i className="bi bi-pencil-fill"></i>
-        </button>
-        <AddProductToCart
-          product={product}
-          AddProductToCart={AddProductToCart}
-        ></AddProductToCart>
-      </Card> */}
+     
     </>
   );
 }

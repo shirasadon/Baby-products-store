@@ -6,9 +6,7 @@ function Home() {
     <>
       <Slider></Slider>
       <NavbarProduct></NavbarProduct>
-      <hr style={{color:"#e6004c"}} />
-      <h3 style={{textAlign:"center", color:"#e6004c",fontSize:"50px"}}>Articles</h3>
-    
+      <h3 style={{textAlign:"center", color:"#ff0066",fontSize:"50px",fontFamily:"cursive"}}>Articles</h3> 
       <Articles></Articles>
     </>
   );

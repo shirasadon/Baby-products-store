@@ -1,22 +1,13 @@
 import { Link } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 import EditProduct from "./editProduct";
 import productService from "../services/productService"
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const styleCard = {
-  width: "17rem",
-  backgroundColor: "",
-  margin: "15px",
-  color: "#bf2b7a",
-  fontFamily: "cursive",
-  fontSize: "",
-};
 
 function EditableProductCard({ product }) {
   const [refresh, setRefresh] = useState(false);
-  const { _id,img, title, description,category } = product;
+  const { _id,img, title, description,category,price } = product;
   const removeProduct = async (id) => {
     await productService.deleteProduct(id);
     toast("The product has been successfully deleted")
@@ -42,6 +33,9 @@ function EditableProductCard({ product }) {
                     </div>
                     <div class="card-text">
                      {category}
+                    </div>
+                    <div class="card-text">
+                     {price}
                     </div>
         <button  class="buttoncart"
           type="button"

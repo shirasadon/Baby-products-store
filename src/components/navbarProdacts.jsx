@@ -6,7 +6,7 @@ function NavbarProduct() {
 <div>
       <div class="row"  >
         <div className="stylediv" class=" stylediv col-sm">
-            <Link to="/products/babycarriges" class="navbar-brand">
+            <Link style={{fontSize:"20px",fontFamily:"cursive"}} to="/products/babycarriges" class="navbar-brand">
               <img
                 style={{
                   height: "50px",
@@ -21,7 +21,7 @@ function NavbarProduct() {
             </div>
         
           <div className="stylediv" class=" stylediv col-sm">
-            <Link to="/products/clothingandfootweare" class="navbar-brand">
+            <Link style={{fontSize:"20px",fontFamily:"cursive"}} to="/products/clothingandfootweare" class="navbar-brand">
               <img
                 style={{
                   height: "50px",
@@ -35,7 +35,7 @@ function NavbarProduct() {
             </div>
       
          <div className="stylediv" class=" stylediv col-sm" >
-            <Link to="/products/furniture" class="navbar-brand">
+            <Link style={{fontSize:"20px",fontFamily:"cursive"}} to="/products/furniture" class="navbar-brand">
               <img
                 style={{
                   height: "50px",
@@ -48,7 +48,7 @@ function NavbarProduct() {
             </Link>
             </div>
         <div className="stylediv" class=" stylediv col-sm">
-            <Link to="/products/chairsafty" class="navbar-brand">
+            <Link style={{fontSize:"20px",fontFamily:"cursive"}} to="/products/chairsafty" class="navbar-brand">
               <img
                 style={{
                   height: "50px",
@@ -61,7 +61,7 @@ function NavbarProduct() {
             </Link>
             </div>
         <div className="stylediv" class=" stylediv col-sm">
-            <Link to="/products/toys" class="navbar-brand">
+            <Link style={{fontSize:"20px",fontFamily:"cursive"}} to="/products/toys" class="navbar-brand">
               <img
                 style={{
                   height: "50px",

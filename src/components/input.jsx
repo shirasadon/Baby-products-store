@@ -17,7 +17,7 @@ const Input = ({ label, name, error, ...rest }) => {
     borderRadius: "5000px",
     backdropFilter:" blur(5px)",
     boxShadow: "4px 4px 60px rgba(0,0,0,0.2)",
-    color: "#fff",
+    // color: "rgba(255,255,255,0.3)",
     fontFamily: "Montserrat, sans-serif",
     fontWeight: "500PX",
     transition: "all 0.2s ease-in-out",

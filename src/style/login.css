@@ -1,7 +1,7 @@
 
 body {
   background: linear-gradient(45deg, #FC466B, #3F5EFB);
-  height:1100px;
+  height:1200px;
   font-family: 'Montserrat', sans-serif;
 
 }
@@ -9,7 +9,7 @@ body {
 form {
   background: rgba(255,255,255,0.3);
   padding: 3em;
-  height: 600px;
+  height: 700px;
   border-radius: 20px;
   border-left: 1px solidrgba(255,255,255,0.3);
   border-top: 1px solid rgba(255,255,255,0.3);

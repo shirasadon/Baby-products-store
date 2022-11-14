@@ -19,7 +19,7 @@ function Article({ article }) {
     <div>
      {text}
   </div>
-  <Link to={{pathname:`/readMore/${_id}`,data:[{articleid:article._id,articleImg:article.img,articleTitle:article.title,aricleText:article.text}]}}>read more</Link>
+ 
 </div>
 </div>
     </>

@@ -4,8 +4,8 @@ function NavbarHeader() {
   const { user } = useAuth();
   return (
     <>
-   <nav style={{  height: "100px",
-    backgroundColor: "#ffe4e1"}}
+   <nav style={{  height: "150px",
+    backgroundColor: "#ff0066",fontSize:"20px",fontFamily:"cursive"}}
     className="navbar navbar-expand-sm " 
        aria-label="Third navbar example"
        >

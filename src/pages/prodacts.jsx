@@ -1,27 +1,21 @@
 import { Link } from "react-router-dom";
 import "../style/productsComponent.css"
 function Products() {
-  const stylediv = {
-    backgroundColor: "#ffe4e1",
-    height: "300px",
-    width: "800px",
-    textAlign: "center",
-  };
   return (
     <>
 
 <div class="row1-container">
     <div class="box box-down cyan">
       <h2>
-      <Link to="/products/chairsafty" class="nav-item nav-link active">
-              Care Safety{" "}
+      <Link style={{fontSize:"32px",fontFamily:"cursive"}} to="/products/chairsafty" class="nav-item nav-link active">
+      Safety Chair{" "}
             </Link>
             </h2>
       <img src="https://cdn-icons-png.flaticon.com/128/3320/3320202.png" alt="chairsafty"/>
     </div>
 
     <div class="box red">
-      <h2> <Link to="/products/babycarriges" class="nav-item nav-link active">
+      <h2> <Link style={{fontSize:"32px",fontFamily:"cursive"}} to="/products/babycarriges" class="nav-item nav-link active">
               Baby Carriges{" "}
             </Link></h2>
      
@@ -29,7 +23,7 @@ function Products() {
     </div>
 
     <div class="box box-down blue">
-      <h2>  <Link
+      <h2>  <Link style={{fontSize:"32px",fontFamily:"cursive"}}
               to="/products/clothingandfootweare"
               class="nav-item nav-link active"
             >
@@ -40,7 +34,7 @@ function Products() {
   </div>
   <div class="row2-container">
     <div class="box orange">
-      <h2> <Link to="/products/furniture" class="nav-item nav-link active">
+      <h2> <Link style={{fontSize:"32px",fontFamily:"cursive"}} to="/products/furniture" class="nav-item nav-link active">
               Baby Furniture{" "}
             </Link></h2>
     
@@ -49,7 +43,7 @@ function Products() {
   </div>
   <div class="row2-container">
     <div class="box red">
-      <h2>   <Link to="/products/toys" class="nav-item nav-link active">
+      <h2>   <Link style={{fontSize:"32px",fontFamily:"cursive"}} to="/products/toys" class="nav-item nav-link active">
               Toys
             </Link></h2>
     

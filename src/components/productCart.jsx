@@ -7,7 +7,7 @@ import "../style/productCart.css"
 
 function ProductCart({ product }) {
   const [refresh, setRefresh] = useState(false);
-  const { _id, title, category, description, img } = product;
+  const { _id, title, category, description, img,price } = product;
   const removeProductFromCart = async (id) => {
     await cartService.deleteproductFromCart(id);
     toast("The product has been successfully deleted from the cart")
@@ -33,7 +33,7 @@ function ProductCart({ product }) {
                        {description}
                     </div>
                     <div class="card-text">
-                     {category}
+                   {price}
                     </div>
                     <button  class="buttoncart"
           type="button"

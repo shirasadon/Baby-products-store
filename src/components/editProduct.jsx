@@ -14,12 +14,15 @@ function EditProduct({ product }) {
       description: product.description,
       category: product.category,
       img: product.img,
+      price:product.price
     },
     validate: formikValidateUsingJoi({
       title: Joi.string().min(5).max(30).required(),
       description: Joi.string().min(6).max(2000).required(),
       category: Joi.string().min(4).max(30).required(),
       img: Joi.string().min(5).max(1000).required(),
+      price: Joi.string().min(2).max(1000).required(),
+
     }),
     onSubmit(values) {
       try {
@@ -34,7 +37,7 @@ function EditProduct({ product }) {
 
   return (
     <>
-      <div
+      <div 
         class="modal fade"
         id="editmodal"
         tabindex="-1"
@@ -45,7 +48,7 @@ function EditProduct({ product }) {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Modal title
+               Edit product
               </h5>
               <button
                 type="button"
@@ -64,6 +67,7 @@ function EditProduct({ product }) {
                   error={form.touched.title && form.errors.title}
                 />
                 <Input
+              
                   name="description"
                   label="description"
                   {...form.getFieldProps("description")}
@@ -81,10 +85,18 @@ function EditProduct({ product }) {
                   {...form.getFieldProps("category")}
                   error={form.touched.category && form.errors.category}
                 />
+                   <Input
+              
+              name="price"
+              label="price"
+              {...form.getFieldProps("price")}
+              error={form.touched.price && form.errors.price}
+            />
+         
                 <div className="my-2">
                   <button
                     disabled={!form.isValid}
-                    className="btn btn-success"
+                    className="btn btn-info"
                     type="submit"
                     data-bs-dismiss="modal"
                   >

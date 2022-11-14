@@ -3,12 +3,14 @@ body {
     padding: 30px;
     background: #f8f4f2;
     font-family: Arial;
+   
   }
   
   .a-box {
     display: inline-block;
-    width: 340px;
+    width: 540px;
     text-align: center;
+ 
  
    
   }
@@ -25,6 +27,7 @@ body {
       transform: skew(0deg, -13deg);
       height: 250px;
       margin: -35px 0px 0px -70px;
+      
   }
   
   .inner-skew {
@@ -46,8 +49,9 @@ body {
     background: #fff;
     margin: -120px 0px 0px 0px;
     line-height: 19px;
-    font-size: 20px;
+    font-size: 17px;
     overflow: hidden;
+    line-height: 1.5;
   }
   
   .text-container h3 {

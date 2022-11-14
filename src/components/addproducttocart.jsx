@@ -91,8 +91,7 @@ function AddProductToCart({ product }) {
                 <div className="my-2">
                   <button
                     disabled={!form.isValid}
-                    className="btn btn-success"
-                    type="submit"
+                    className="btn btn-info"                    type="submit"
                     data-bs-dismiss="modal"
                   >
                     Add product to cart

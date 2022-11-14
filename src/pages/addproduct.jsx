@@ -14,11 +14,12 @@ function AddProduct() {
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
-      img: "img",
-      title: "title",
-      description: "description",
-      category: "category",
-      alt: "alt",
+      img: "",
+      title: "",
+      description: "",
+      category: "",
+      alt: "",
+      price:""
     },
     validate: formikValidateUsingJoi({
       img: Joi.string().min(5).max(1000).required(),
@@ -26,6 +27,8 @@ function AddProduct() {
       description: Joi.string().min(6).max(2000).required(),
       category: Joi.string().min(4).max(30).required(),
       alt: Joi.string().min(5).max(1000).required(),
+      price: Joi.string().min(2).max(1000).required(),
+
     }),
     async onSubmit(values) {
       try {
@@ -79,6 +82,13 @@ function AddProduct() {
             type="string"
             {...formik.getFieldProps("alt")}
             error={formik.touched.alt && formik.errors.alt}
+          ></Input>
+            <Input
+            label="price"
+            name="price"
+            type="string"
+            {...formik.getFieldProps("price")}
+            error={formik.touched.price && formik.errors.price}
           ></Input>
           <br />
           <button disabled={!formik.isValid} className="input button">
