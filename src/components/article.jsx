@@ -1,5 +1,6 @@
 import "../style/article.css"
 import { Link } from "react-router-dom";
+
 function Article({ article }) {
   const { _id,img, title, text } = article;
   return (
