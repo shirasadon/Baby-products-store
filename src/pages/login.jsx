@@ -7,7 +7,7 @@ import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
 import Input from "../components/input";
 import { useAuth } from "../context/auth.context";
 import { toast } from "react-toastify";
-
+import "../style/login.css"
 function Login({ redirect, redirectBiz }) {
   const { login, user } = useAuth();
   const [error, setError] = useState("");
@@ -40,18 +40,6 @@ function Login({ redirect, redirectBiz }) {
           setError(response.data);
         }
       }
-      // try {
-      //   const dataFromLogin = await login(values);
-      //   if (dataFromLogin.biz) {
-      //     navigate(redirectBiz);
-      //   } else if (redirect) {
-      //     navigate(redirect);
-      //   }
-      // } catch ({ response }) {
-      //   if (response.status === 400) {
-      //     setError(response.data);
-      //   }
-      // }
     },
   });
   if (user) {
@@ -59,7 +47,40 @@ function Login({ redirect, redirectBiz }) {
   }
   return (
     <>
-      <div class="container container-table" style={{ width: "600px" }}>
+
+<link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/> 
+<div class="container" >
+  <form onSubmit={formik.handleSubmit} >
+  {error && <div className="alert alert-danger">{error}</div>}
+    <p>Welcome</p>
+    <input  label="email"
+            name="email"
+            type="email"
+            {...formik.getFieldProps("email")}
+            error={formik.touched.email && formik.errors.email}  class="email" placeholder="Email"/><br/><br />
+    <input label="password"
+            name="password"
+            type="password"
+            {...formik.getFieldProps("password")}
+            error={formik.touched.password && formik.errors.password} class="pass" placeholder="Password"/><br/><br />
+            <button className="input button" disabled={!formik.isValid} >
+            Log in
+          </button>
+    {/* <input disabled={!formik.isValid}  type="button" value="Sign in"/><br/> */}
+    
+  </form>
+
+  <div class="drops">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+  </div>
+</div>
+
+      {/* <div class="container container-table" style={{ width: "600px" }}>
         <form onSubmit={formik.handleSubmit}>
           {error && <div className="alert alert-danger">{error}</div>}
           <Input
@@ -80,9 +101,12 @@ function Login({ redirect, redirectBiz }) {
             Log in
           </button>
         </form>
-      </div>
+      </div> */}
     </>
   );
 }
 
 export default Login;
+
+
+
