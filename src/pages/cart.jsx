@@ -19,7 +19,10 @@ function Cart() {
           <p>No Products</p>
         ) : (
           products.map((product) => (
-            <div class="col-sm">    <ProductCart key={product._id} product={product} /></div>
+            <div class="col-sm">
+              {" "}
+              <ProductCart key={product._id} product={product} />
+            </div>
           ))
         )}
       </div>

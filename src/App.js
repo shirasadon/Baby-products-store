@@ -30,7 +30,6 @@ import AddProductToCart from "./components/addproducttocart";
 import ViewAllProducts from "./pages/viewAllProducts";
 import EditProduct from "./components/editProduct";
 import DeleteProduct from "./components/deleteProduct";
-import ReadMoreArticle from "./pages/readMoreArticle";
 function App() {
   return (
     <>
@@ -69,8 +68,6 @@ function App() {
             path="/cart/addproduct"
             element={<AddProductToCart redirect="cart" />}
           />
-             <Route path="/readMore/:id" element={<ReadMoreArticle />} />
-          
         </Routes>
       </div>
       <Footer></Footer>

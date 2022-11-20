@@ -5,14 +5,13 @@ import { toast } from "react-toastify";
 
 import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
 import Input from "../components/input";
-// import { createUser } from "../services/userService";
 import { useAuth } from "../context/auth.context";
 import { Navigate, useNavigate } from "react-router-dom";
 function SignupBiz({ redirect }) {
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
-  const { createUser, user, login } = useAuth();
+  const { createUser, user } = useAuth();
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
@@ -35,7 +34,6 @@ function SignupBiz({ redirect }) {
     async onSubmit(values) {
       try {
         await createUser({ ...values, biz: true });
-        // await login({ email: values.email, password: values.password })
         console.log(values);
         if (redirect) {
           toast("Your account is ready 👏");
@@ -61,7 +59,6 @@ function SignupBiz({ redirect }) {
             name="name"
             type="string"
             placeholder="name"
-
             {...formik.getFieldProps("name")}
             error={formik.touched.name && formik.errors.name}
           ></Input>
@@ -70,7 +67,6 @@ function SignupBiz({ redirect }) {
             name="phone"
             type="string"
             placeholder="phone"
-
             {...formik.getFieldProps("phone")}
             error={formik.touched.phone && formik.errors.phone}
           ></Input>
@@ -91,8 +87,7 @@ function SignupBiz({ redirect }) {
             error={formik.touched.email && formik.errors.email}
           ></Input>
           <br />
-          <button className="input button" disabled={!formik.isValid} >
-            
+          <button className="input button" disabled={!formik.isValid}>
             sign up Business
           </button>
         </form>

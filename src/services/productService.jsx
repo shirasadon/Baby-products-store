@@ -35,10 +35,16 @@ export function editProduct(id, product) {
 }
 
 export function deleteProduct(product) {
-   const productId = product._id;
-   delete product._id;
-  return httpService.delete(`/products/${productId}`,product);
+  const productId = product._id;
+  delete product._id;
+  return httpService.delete(`/products/${productId}`, product);
 }
+
+
+// export function searchProduct(){
+//    return httpService.get("/products/");
+
+// }
 
 
 const productService = {

@@ -28,8 +28,8 @@ function AddProductToCart({ product }) {
     onSubmit(values) {
       try {
         addproducttocart(product._id, values);
-            toast("The product has been successfully added to the cart")
-             navigate("/cart");
+        toast("The product has been successfully added to the cart");
+        navigate("/cart");
       } catch ({ response }) {
         if (response.status === 400) {
           setError(response.data);
@@ -51,7 +51,7 @@ function AddProductToCart({ product }) {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-              Product information
+                Product information
               </h5>
               <button
                 type="button"
@@ -91,7 +91,8 @@ function AddProductToCart({ product }) {
                 <div className="my-2">
                   <button
                     disabled={!form.isValid}
-                    className="btn btn-info"                    type="submit"
+                    className="btn btn-info"
+                    type="submit"
                     data-bs-dismiss="modal"
                   >
                     Add product to cart

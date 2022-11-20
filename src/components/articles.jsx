@@ -15,14 +15,18 @@ function Articles() {
     <>
       <div className="row">
         {!articles.length ? (
-          <p style={{textAlign:"center", color:"#e6004c",fontSize:"50px"}}>No Articles</p>
+          <p
+            style={{ textAlign: "center", color: "#e6004c", fontSize: "50px" }}
+          >
+            No Articles
+          </p>
         ) : (
-       
           articles.map((article) => (
-            <div class="col-sm">  <Article key={article._id} article={article} />  </div>
-           
+            <div class="col-sm">
+              {" "}
+              <Article key={article._id} article={article} />{" "}
+            </div>
           ))
-        
         )}
       </div>
     </>

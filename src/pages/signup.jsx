@@ -88,7 +88,7 @@ function Signup({ redirect }) {
             error={formik.touched.email && formik.errors.email}
           ></Input>
           <br />
-          <button  className="input button" disabled={!formik.isValid} >
+          <button className="input button" disabled={!formik.isValid}>
             sign up
           </button>
         </form>

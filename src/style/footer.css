@@ -1,17 +1,14 @@
-
-
 .styleDiv {
-    background-color: #ffe4e1;
-    margin: 5px;
-    font-size: 16px;
-    height: 150px;
-    text-align: center;
-    padding: 30px;
-  }
+  background-color: #ffe4e1;
+  margin: 5px;
+  font-size: 16px;
+  height: 150px;
+  text-align: center;
+  padding: 30px;
+}
 .contactInformation {
-    background-color: #00cccc;
-    font-size: 16px;
-    text-align: center;
-    color: #f08080;
-   
-};
+  background-color: #00cccc;
+  font-size: 16px;
+  text-align: center;
+  color: #f08080;
+}

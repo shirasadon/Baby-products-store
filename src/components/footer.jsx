@@ -1,12 +1,10 @@
-import "../style/footer.css"
-
-
+import "../style/footer.css";
 
 function Footer() {
   return (
     <>
-      <div >
-        <div class="row" >
+      <div>
+        <div class="row">
           <div className="styleDiv" class="styleDiv  col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +20,7 @@ function Footer() {
             <br />
             Advice in the purchase process
           </div>
-          <div className="styleDiv" class="styleDiv  col-sm" >
+          <div className="styleDiv" class="styleDiv  col-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -100,12 +98,12 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div class= "row">
+      <div class="row">
         <div className="contactInformation" class="contactInformation col-sm">
-        <h3>Shira Saadon</h3>
-        <h6>054-5543354</h6>
-        <h6>ahirasa199@gmail.com</h6>
-      </div>
+          <h3>Shira Saadon</h3>
+          <h6>054-5543354</h6>
+          <h6>ahirasa199@gmail.com</h6>
+        </div>
       </div>
     </>
   );

@@ -19,7 +19,7 @@ function AddProduct() {
       description: "",
       category: "",
       alt: "",
-      price:""
+      price: "",
     },
     validate: formikValidateUsingJoi({
       img: Joi.string().min(5).max(1000).required(),
@@ -28,7 +28,6 @@ function AddProduct() {
       category: Joi.string().min(4).max(30).required(),
       alt: Joi.string().min(5).max(1000).required(),
       price: Joi.string().min(2).max(1000).required(),
-
     }),
     async onSubmit(values) {
       try {
@@ -83,7 +82,7 @@ function AddProduct() {
             {...formik.getFieldProps("alt")}
             error={formik.touched.alt && formik.errors.alt}
           ></Input>
-            <Input
+          <Input
             label="price"
             name="price"
             type="string"
