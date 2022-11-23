@@ -6,80 +6,62 @@ import { editProduct } from "../services/productService";
 import Input from "../components/input";
 import { useEffect } from "react";
 import { useState } from "react";
-function EditProduct({ product, setClickFalse}) {
+import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-  const [copyProduct, setCopyProduct] = useState(null)
+
+function EditProduct({ product, handleSetClickFalse
+}) {
+  const navigate = useNavigate();
+
   const closeModal=()=>{
     console.log('close');
-    setClickFalse();
-    setCopyProduct(null);
+    handleSetClickFalse();
   }
  
   useEffect(() => {
-    if(product) {
-      setCopyProduct(product);
-    }
-    console.log("card", product);
-    
-
-    // return (() => {
-    //   setClick(false);
-    // // })
+    console.log('product', product);
+ 
   }, []);
   const [error, setError] = useState("");
-  // const form = useFormik({
-  //   validateOnMount: true,
-  //   initialValues: {
-  //     title: product.title,
-  //     description: product.description,
-  //     category: product.category,
-  //     img: product.img,
-  //     price: product.price,
-  //   },
-  //   validate: formikValidateUsingJoi({
-  //     title: Joi.string().min(5).max(30).required(),
-  //     description: Joi.string().min(6).max(2000).required(),
-  //     category: Joi.string().min(4).max(30).required(),
-  //     img: Joi.string().min(5).max(1000).required(),
-  //     price: Joi.string().min(2).max(1000).required(),
-  //   }),
-  //   onSubmit(values) {
-  //     try {
-  //       editProduct(product._id, values);
-  //     } catch ({ response }) {
-  //       if (response.status === 400) {
-  //         setError(response.data);
-  //       }
-  //     }
-  //   },
-  // });
+  const form = useFormik({
+    validateOnMount: true,
+    initialValues: {
+      title: product.title,
+      description: product.description,
+      category: product.category,
+      img: product.img,
+      price: product.price,
+    },
+    validate: formikValidateUsingJoi({
+      title: Joi.string().min(5).max(30).required(),
+      description: Joi.string().min(6).max(2000).required(),
+      category: Joi.string().min(4).max(30).required(),
+      img: Joi.string().min(5).max(1000).required(),
+      price: Joi.string().min(2).max(1000).required(),
+    }),
+    onSubmit(values) {
+      try {
+        editProduct(product._id, values);
+        toast("The product has been updated successfully!");
+         navigate("/home");
+      } catch ({ response }) {
+        if (response.status === 400) {
+          setError(response.data);
+        }
+      }
+    },
+  });
 
   return (
-    <>{
-      product && copyProduct && 
-      <div
-      class="modal fade"
-      id="editmodal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Edit product
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <input value = {copyProduct.title}></input>
-            {/* <form autoComplete="off" noValidate onSubmit={form.handleSubmit}>
+    <>
+      <Modal show={true} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit {product.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+<form autoComplete="off" noValidate onSubmit={form.handleSubmit}>
               {error && <div className="alert alert-danger ">{error}</div>}
               <Input
                 name="title"
@@ -122,23 +104,20 @@ function EditProduct({ product, setClickFalse}) {
                   Update product
                 </button>
               </div>
-            </form> */}
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    }
-     
+            </form> 
+
+
+
+        </Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={closeModal}>
+            Close
+          </button>
+          <button variant="primary" onClick={closeModal}>
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>   
     </>
   );
 }

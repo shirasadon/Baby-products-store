@@ -42,9 +42,7 @@ function NavbarHeader() {
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
-                  id="navbarDropdown"
                   role="button"
-                  data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                   to="/products"

@@ -1,26 +1,25 @@
 import EditProduct from "./editProduct";
-import productService from "../services/productService";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import DeleteProductFromStore from "./DeleteProductFromStore";
 
 function EditableProductCard({ product }) {
-  const [refresh, setRefresh] = useState(false);
   const [click, setClick] = useState(false);
+  const [clickDelete, setClickDelete] = useState(false);
   const { _id, img, title, description, category, price } = product;
-  const removeProduct = async (id) => {
-    await productService.deleteProduct(id);
-    toast("The product has been successfully deleted");
-    setRefresh(!refresh);
-  };
+ 
   const rendersingleproduct=()=>{
     console.log( "this is" ,product);
-    // return (
-    //   <EditProduct product={product} ></EditProduct>
-    // )
     setClick(true);
   }
   const setClickFalse = () => {
     setClick(false)
+  }
+  const pressDelete=()=>{
+    console.log( "this is" ,product);
+    setClickDelete(true);
+  }
+  const setClickFalseDelete = () => {
+    setClickDelete(false)
   }
   return (
     <>
@@ -50,14 +49,9 @@ function EditableProductCard({ product }) {
                 click && 
                 <EditProduct
                   product={product}
-                  setClickFalse={setClickFalse}
-                // EditProduct={EditProduct}
+                  handleSetClickFalse={() => setClickFalse(false)}
                 ></EditProduct>
               }
-              {/* <EditProduct
-                product={product}
-                // EditProduct={EditProduct}
-              ></EditProduct> */}
 
               <button
                 type="button"
@@ -65,60 +59,23 @@ function EditableProductCard({ product }) {
                 className="buttoncart2"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
+                onClick={pressDelete}
+
               >
                 delete product <i className="bi bi-trash-fill"></i>
               </button>
-
-              <div
-                className="modal fade"
-                id="exampleModal"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h3 className="modal-title" id="exampleModalLabel">
-                        delete product
-                      </h3>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <p>are you sure to delete?</p>
-                      <h5>{title}</h5>
-                    </div>
-                    <div className="modal-footer">
-                      <button
-                        type="button"
-                        className="btn btn bg-danger"
-                        data-bs-dismiss="modal"
-                      >
-                        cancel
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn bg-danger"
-                        data-bs-dismiss="modal"
-                        onClick={() => {
-                          removeProduct(_id);
-                        }}
-                      >
-                        delete product
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {
+ clickDelete && 
+              <DeleteProductFromStore 
+              product={product}
+              handleSetClickFalseDelete={() => setClickFalseDelete(false)}
+              ></DeleteProductFromStore>
+              }
             </div>
           </div>
         </div>
       </div>
+      
     </>
   );
 }

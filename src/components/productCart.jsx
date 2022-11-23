@@ -3,15 +3,33 @@ import { useState } from "react";
 import cartService from "../services/cartService";
 import { toast } from "react-toastify";
 import "../style/productCart.css";
+import { useEffect } from "react";
+import Modal from 'react-bootstrap/Modal';
 
-function ProductCart({ product }) {
+function ProductCart({ product,handleSetClickFalseDelete }) {
+  const [click, setClick] = useState(false);
+
   const [refresh, setRefresh] = useState(false);
+  const closeModal=()=>{
+    console.log('close');
+    handleSetClickFalseDelete();
+ 
+  }
   const { _id, title, category, description, img, price } = product;
+  useEffect(() => {
+    console.log('product', product);
+  
+  }, []);
+ 
   const removeProductFromCart = async (id) => {
     await cartService.deleteproductFromCart(id);
     toast("The product has been successfully deleted from the cart");
     setRefresh(!refresh);
   };
+  const rendersingleproduct=()=>{
+    console.log( "this is" ,product);
+    setClick(true);
+  }
   return (
     <>
       <div class="container" style={{ marginTop: "50px", width: "300px" }}>
@@ -25,66 +43,52 @@ function ProductCart({ product }) {
               <div class="card-heading">{title}</div>
               <div class="card-text">{description}</div>
               <div class="card-text">{price}</div>
-              <button
-                class="buttoncart"
+
+<button
                 type="button"
-                className="buttoncart"
+                class="buttoncart2"
+                className="buttoncart2"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-              >
-                delete <i className="bi bi-trash-fill"></i>
-              </button>
+                onClick={rendersingleproduct}
 
-              <div
-                className="modal fade"
-                id="exampleModal"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
               >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h3 className="modal-title" id="exampleModalLabel">
-                        delete product
-                      </h3>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <p>are you sure to delete?</p>
-                      <h5>{title}</h5>
-                    </div>
-                    <div className="modal-footer">
-                      <button
-                        type="button"
-                        className="btn btn bg-danger"
-                        data-bs-dismiss="modal"
-                      >
-                        cancel
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn bg-danger"
-                        data-bs-dismiss="modal"
-                        onClick={() => {
-                          removeProductFromCart(_id);
-                        }}
-                      >
-                        delete product from cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                delete product <i className="bi bi-trash-fill"></i>
+              </button>
+              {
+ click && 
+<Modal show={true} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div className="my-2">
+                <button
+                  className="btn btn-info"
+                  type="submit"
+                  data-bs-dismiss="modal"
+                  onClick={() => {
+                    removeProductFromCart(_id) 
+                  }}
+                >
+                 Delete Product
+                </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={closeModal}>
+            Close
+          </button>
+          <button variant="primary" onClick={closeModal}>
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>   
+              }
+              </div>
+              </div>
+              </div>
+              </div>
     </>
   );
 }

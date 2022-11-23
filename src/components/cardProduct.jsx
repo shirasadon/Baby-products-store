@@ -1,9 +1,19 @@
 
 import AddProductToCart from "./addproducttocart";
 import "../style/productCart.css";
+import { useState } from "react";
 
 function CardProduct({ product }) {
+  const [click, setClick] = useState(false);
+
   const { _id, img, title, description, category, price } = product;
+  const rendersingleproduct=()=>{
+    console.log( "this is" ,product);
+    setClick(true);
+  }
+  const setClickFalse = () => {
+    setClick(false)
+  }
   return (
     <>
       <div class="container" style={{ marginTop: "50px", width: "300px" }}>
@@ -24,13 +34,18 @@ function CardProduct({ product }) {
                 className="buttoncart"
                 data-bs-toggle="modal"
                 data-bs-target="#editmodal"
+                onClick={rendersingleproduct}
+
               >
                 Add product to cart <i class="bi bi-cart-plus-fill"></i>
               </button>
+              {
+                click && 
               <AddProductToCart
                 product={product}
-                AddProductToCart={AddProductToCart}
+                handleSetClickFalseAddProduct={()=>{setClickFalse(false)}}
               ></AddProductToCart>
+}
             </div>
           </div>
         </div>

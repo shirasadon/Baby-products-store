@@ -7,8 +7,19 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { addproducttocart } from "../services/productService";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
+import Modal from 'react-bootstrap/Modal';
 
-function AddProductToCart({ product }) {
+function AddProductToCart({ product,handleSetClickFalseAddProduct }) {
+  const closeModal=()=>{
+    console.log('close');
+    handleSetClickFalseAddProduct();
+   
+  }
+  useEffect(() => {
+    console.log('product', product);
+  }, []);
+
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const form = useFormik({
@@ -39,28 +50,14 @@ function AddProductToCart({ product }) {
   });
 
   return (
+   
     <>
-      <div
-        class="modal fade"
-        id="editmodal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Product information
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
+    
+       <Modal show={true} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
               <form autoComplete="off" noValidate onSubmit={form.handleSubmit}>
                 {error && <div className="alert alert-danger ">{error}</div>}
                 <Input
@@ -99,19 +96,17 @@ function AddProductToCart({ product }) {
                   </button>
                 </div>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                close{" "}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+              </Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={closeModal}>
+            Close
+          </button>
+          <button variant="primary" onClick={closeModal}>
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>  
+   
     </>
   );
 }
