@@ -8,17 +8,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { addproducttocart } from "../services/productService";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
-function AddProductToCart({ product,handleSetClickFalseAddProduct }) {
-  const closeModal=()=>{
-    console.log('close');
+function AddProductToCart({ product, handleSetClickFalseAddProduct }) {
+  const closeModal = () => {
+    console.log("close");
     handleSetClickFalseAddProduct();
-   
-  }
-  useEffect(() => {
-    console.log('product', product);
-  }, []);
+  };
 
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -50,63 +46,57 @@ function AddProductToCart({ product,handleSetClickFalseAddProduct }) {
   });
 
   return (
-   
     <>
-    
-       <Modal show={true} onHide={closeModal}>
+      <Modal show={true} onHide={closeModal}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-              <form autoComplete="off" noValidate onSubmit={form.handleSubmit}>
-                {error && <div className="alert alert-danger ">{error}</div>}
-                <Input
-                  name="img"
-                  label="img"
-                  {...form.getFieldProps("img")}
-                  error={form.touched.img && form.errors.img}
-                />
-                <Input
-                  name="title"
-                  label="title"
-                  {...form.getFieldProps("title")}
-                  error={form.touched.title && form.errors.title}
-                />
-                <Input
-                  name="description"
-                  label="description"
-                  {...form.getFieldProps("description")}
-                  error={form.touched.description && form.errors.description}
-                />
+          <form autoComplete="off" noValidate onSubmit={form.handleSubmit}>
+            {error && <div className="alert alert-danger ">{error}</div>}
+            <Input
+              name="img"
+              label="img"
+              {...form.getFieldProps("img")}
+              error={form.touched.img && form.errors.img}
+            />
+            <Input
+              name="title"
+              label="title"
+              {...form.getFieldProps("title")}
+              error={form.touched.title && form.errors.title}
+            />
+            <Input
+              name="description"
+              label="description"
+              {...form.getFieldProps("description")}
+              error={form.touched.description && form.errors.description}
+            />
 
-                <Input
-                  name="category"
-                  label="category"
-                  {...form.getFieldProps("category")}
-                  error={form.touched.category && form.errors.category}
-                />
-                <div className="my-2">
-                  <button
-                    disabled={!form.isValid}
-                    className="btn btn-info"
-                    type="submit"
-                    data-bs-dismiss="modal"
-                  >
-                    Add product to cart
-                  </button>
-                </div>
-              </form>
-              </Modal.Body>
+            <Input
+              name="category"
+              label="category"
+              {...form.getFieldProps("category")}
+              error={form.touched.category && form.errors.category}
+            />
+            <div className="my-2">
+              <button
+                disabled={!form.isValid}
+                className="btn btn-info"
+                type="submit"
+                data-bs-dismiss="modal"
+              >
+                Add product to cart
+              </button>
+            </div>
+          </form>
+        </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" onClick={closeModal}>
             Close
           </button>
-          <button variant="primary" onClick={closeModal}>
-            Save Changes
-          </button>
         </Modal.Footer>
-      </Modal>  
-   
+      </Modal>
     </>
   );
 }

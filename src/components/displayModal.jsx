@@ -1,22 +1,11 @@
 import React from "react";
-import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import { toast } from "react-toastify";
-import productService from "../services/productService";
 
-function DeleteProductFromStore({ product, handleSetClickFalseDelete }) {
+function DisplayModal({ product, handleSetClickFalseDelete, removeProduct }) {
+  const { _id, img, title, description, category, price } = product;
   const closeModal = () => {
     handleSetClickFalseDelete();
   };
-  const [refresh, setRefresh] = useState(false);
-  const { _id, img, title, description, category, price } = product;
-  const removeProduct = async (id) => {
-    console.log(_id);
-    await productService.deleteProduct(id);
-    toast("The product has been successfully deleted");
-    setRefresh(!refresh);
-  };
-
   return (
     <>
       <Modal show={true} onHide={closeModal}>
@@ -31,9 +20,7 @@ function DeleteProductFromStore({ product, handleSetClickFalseDelete }) {
               className="btn btn-info"
               type="submit"
               data-bs-dismiss="modal"
-              onClick={() => {
-                removeProduct(_id);
-              }}
+              onClick={() => removeProduct(_id)}
             >
               Delete Product
             </button>
@@ -49,4 +36,4 @@ function DeleteProductFromStore({ product, handleSetClickFalseDelete }) {
   );
 }
 
-export default DeleteProductFromStore;
+export default DisplayModal;

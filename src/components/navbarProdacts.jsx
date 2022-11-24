@@ -18,8 +18,8 @@ function NavbarProduct() {
                   backgroundColor: "#f08080",
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/1014/1014615.png"
-            
-            alt=" baby carriges"></img>{" "}
+                alt=" baby carriges"
+              ></img>{" "}
               baby carriges
             </Link>
           </div>
@@ -37,7 +37,8 @@ function NavbarProduct() {
                   backgroundColor: "#f08080",
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/4464/4464080.png"
-             alt=" Clothing and apparel" ></img>
+                alt=" Clothing and apparel"
+              ></img>
               Clothing and apparel
             </Link>
           </div>
@@ -55,7 +56,8 @@ function NavbarProduct() {
                   backgroundColor: "#f08080",
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/6992/6992633.png"
-                alt=" furniture" ></img>
+                alt=" furniture"
+              ></img>
               furniture
             </Link>
           </div>
@@ -72,7 +74,8 @@ function NavbarProduct() {
                   backgroundColor: "#f08080",
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/3262/3262527.png"
-                alt="Safety Chair" ></img>
+                alt="Safety Chair"
+              ></img>
               Safety Chair
             </Link>
           </div>
@@ -89,7 +92,8 @@ function NavbarProduct() {
                   backgroundColor: "#f08080",
                 }}
                 src="https://cdn-icons-png.flaticon.com/512/3262/3262527.png"
-                alt="toys" ></img>
+                alt="toys"
+              ></img>
               toys
             </Link>
           </div>

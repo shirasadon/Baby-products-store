@@ -4,7 +4,6 @@ function NavbarHeader() {
   const { user } = useAuth();
   return (
     <>
-  
       <nav
         style={{
           height: "150px",

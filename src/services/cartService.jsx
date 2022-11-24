@@ -4,10 +4,8 @@ export const getProducCart = () => {
   return httpService.get("/cart");
 };
 
-export const deleteproductFromCart = (product) => {
-  const productId = product._id;
-  delete product._id;
-  return httpService.delete(`/cart/${productId}`, product);
+export const deleteproductFromCart = (id) => {
+  return httpService.delete(`/cart/${id}`);
 };
 
 const cartService = { getProducCart, deleteproductFromCart };
